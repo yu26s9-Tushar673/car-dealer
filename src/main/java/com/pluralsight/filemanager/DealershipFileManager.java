@@ -45,11 +45,25 @@ public class DealershipFileManager {
         return  dealership;
     }
 
-    public void saveDealership() {
+    public void saveDealership(Dealership dealership) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-            
 
+            writer.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
+            writer.newLine();
+
+            for(Vehicle v : dealership.getAllVehicles()){
+                writer.write(v.getVin() + "|" +
+                        v.getYear() + "|" +
+                        v.getMake() + "|" +
+                        v.getModel() + "|" +
+                        v.getVehicleType() + "|" +
+                        v.getColor() + "|" +
+                        v.getOdometer() + "|" +
+                        v.getPrice());
+                writer.newLine();
+            }
+            writer.close();
         } catch (IOException e) {
             System.out.println("Error reading file:" + e.getMessage());
         }

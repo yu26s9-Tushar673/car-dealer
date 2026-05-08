@@ -76,17 +76,15 @@ public class Dealership {
         return result;
     }
 
-    public List<Vehicle> getAllVehicles() {
-        return inventory;
-    }
+    public List<Vehicle> getAllVehicles() {   return inventory;   }
 
-    public void addVehicle(Vehicle vehicle) {
-        inventory.add(vehicle);
-    }
+    public void addVehicle(Vehicle vehicle) {   inventory.add(vehicle);   }
 
-    public void removeVehicle(Vehicle vehicle) {
-        inventory.remove(vehicle);
-    }
+    public void removeVehicle(Vehicle vehicle) {   inventory.remove(vehicle);   }
+
+    public void setName(String name) {   this.name = name;   }
+    public void setAddress(String address) {   this.address = address;   }
+    public void setPhone(String phone) {   this.phone = phone;   }
 
     public String getName() { return name; }
     public String getAddress() { return address; }
